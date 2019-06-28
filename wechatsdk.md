@@ -1,4 +1,4 @@
 # WeChat\_SDK
 
-![](/assets/WeChatSDK.png)
+![](/assets/oj-vL4t8Ox_mIgX0CeLDyc78YVHM.jpg)
 
