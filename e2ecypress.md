@@ -71,9 +71,11 @@ yarn run cypress open
 
 ![](/assets/1.png)
 
-4.运行调试
+4.模拟器脚本控制界面
 
 ![](/assets/2.png)
+
+模拟器运行调试界面
 
 ![](/assets/3.png)
 
@@ -98,7 +100,7 @@ yarn run cypress open
 
 ![](/assets/6.png)
 
-会自动生成报告，运行视频及报错截图
+自动生成报告，运行视频及报错截图，保存到本地
 
 ![](/assets/7.png)
 
