@@ -75,9 +75,9 @@ yarn run cypress open
 
 ![](/assets/2.png)
 
-![](/assets/3.png)
+实际运行界面，详情见底部录屏链接![](/assets/3.png)
 
-5.Dashboard Service
+5.Dashboard Service（仪表盘服务）
 
 1. 查看失败，通过，挂起和跳过测试的数量。
 2. 获取失败测试的整个堆栈跟踪。
@@ -88,9 +88,11 @@ yarn run cypress open
 7. 管理谁有权访问您记录的测试数据。
 8. 查看每个组织的使用详情。
 
+模拟器仪表盘界面
+
 ![](/assets/4.png)
 
-结果
+Dashboard界面，运行结果
 
 ![](/assets/5.png)
 
