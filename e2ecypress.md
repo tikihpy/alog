@@ -1,10 +1,12 @@
 # e2e
 
+#### 简单运行效果（模拟器测试手动录屏）
+
+[http://mudu.ns.4l.hk/show/videolink/m76rb39l/origin](http://mudu.ns.4l.hk/show/videolink/m76rb39l/origin)
+
 #### **什么是E2E：**
 
 E2E（End To End）即端对端测试，属于黑盒测试，通过编写测试用例，自动化模拟用户操作，确保组件间通信正常，程序流数据传递如预期。
-
-
 
 #### **典型E2E测试框架对比**
 
@@ -32,15 +34,15 @@ E2E（End To End）即端对端测试，属于黑盒测试，通过编写测试�
 #### Cypress基本上拥有了上面的特点之外，还有以下特点。
 
 * `时光穿梭`
-  测试运行时，Cypress会自动截图，你可以轻易的查看每个时间的截图
+  测试运行时，Cypress会自动截图，你可以轻易的查看每个时间的截图。
 * `Debug友好`
   不需要再去猜测为什么测试有失败了，Cypress提供Chrome DevTools, 所以Debug是非常方便的。
 * `实时刷新`
-  Cypress检测测试用例改变后，会自动刷新
+  Cypress检测测试用例改变后，会自动刷新。
 * `自动等待`
-  不需要在使用wait类似的方法等待某个DOM出现，Cypress会自动帮你做这些
+  不需要在使用wait类似的方法等待某个DOM出现，Cypress会自动帮你做这些。
 * `Spies, stubs, and clocks`
-  Verify and control the behavior of functions, server responses, or timers. The same functionality you love from unit testing is right at your fingertips.
+  验证并控制函数，服务器响应或计时器的行为。
 * `网络流量控制`
   在不涉及服务器的情况下轻松控制，存根和测试边缘案例。无论你喜欢，你都可以存储网络流量。
 * `一致的结果`
@@ -91,8 +93,6 @@ npx cypress open
 ```
 yarn run cypress open
 ```
-
-
 
 ##### 3.初始化cypress
 
@@ -146,7 +146,7 @@ fixtures 文件夹存放自定义 json 文件，integration 文件夹编写测�
 
 ![](/assets/7.png)
 
-##### 11.运行效果（模拟器测试手动录屏）
+##### 
 
-[http://mudu.ns.4l.hk/show/videolink/m76rb39l/origin](http://mudu.ns.4l.hk/show/videolink/m76rb39l/origin)
+
 
