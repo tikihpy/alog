@@ -1,63 +1,51 @@
-# [【自动化测试】Python - unittest单元测试框架](https://segmentfault.com/a/1190000016315201) {#articleTitle}
-
-
-
-* [框架学习](https://segmentfault.com/t/%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/blogs)
-* [单元测试](https://segmentfault.com/t/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/blogs)
-* [![](https://avatar-static.segmentfault.com/252/177/2521771040-54cb53b372821_small)python](https://segmentfault.com/t/python/blogs)
-
-5k 次阅读  ·  读完需要 35 分钟
-
-4
-
----
+# 【自动化测试】Python - unittest单元测试框 {#articleTitle}
 
 ## **一、测试模型** {#articleHeader0}
 
 下面这部分来自于某书籍资料，拿过来，按需参考一下：
 
-> **测试模型**
->  
-> **（1）线性测试**
->  
-> 1、概念：
->  
-> 通过录制或编写对应应用程序的操作步骤产生的线性脚本。单纯的来模拟用户完整的操作场景。（操作，重复操作，数据）都混合在一起。
->  
-> 2、优点：每个脚本相对独立，且不产生其他依赖和调用。任何一个测试用例脚本拿出来都可以单独执行。
->  
-> 3、缺点：开发成本高，用例之间存在重复的操作。比如重复的用户登录和退出。
->  
-> 维护成本高，由于重复的操作，当重复的操作发生改变时，则需要逐一进行脚本的修改。
->  
-> 4.线性测试实例：用户登录
->  
-> **（2）模块化驱动测试**
->  
-> 1、概念：
->  
-> 将重复的操作独立成功共模块，当用例执行过程中需要用到这一模块操作时则被调用。
->  
-> 操作+（重复操作，数据）混合在一起。例如，自动化测试的执行需要保持测试用例的独立性和完整性，所以每一条用例在执行时都需要登录和退出操作，so可以把登录和退出的操作封装为公共函数。
->  
-> 2、优点：由于最大限度消除了重复，从而提高了开发效率和提高测试用例的可维护性。
->  
-> 3、缺点：虽然模块化的步骤相同，但是测试数据不同。比如说重复的登录模块，如果登录用户不同，依旧要重复编写登录脚本。
->  
-> 4.实例：对公共模块，例如登陆和退出进行模块化封装
->  
-> **（3）数据驱动测试**
->  
-> 1、概念：它将测试中的测试数据和操作分离，数据存放在另外一个文件中单独维护。
->  
-> 通过数据的改变从而驱动自动化测试的执行，最终引起测试结果的改变。
->  
-> 操作+重复操作+数据分开。
->  
-> 2、优点：
->  
-> 通过这种方式，将数据和重复操作分开，可以快速增加相似测试，完成不同数据情况下的测试。
->  
+> **测试模型**  
+>   
+> **（1）线性测试**  
+>   
+> 1、概念：  
+>   
+> 通过录制或编写对应应用程序的操作步骤产生的线性脚本。单纯的来模拟用户完整的操作场景。（操作，重复操作，数据）都混合在一起。  
+>   
+> 2、优点：每个脚本相对独立，且不产生其他依赖和调用。任何一个测试用例脚本拿出来都可以单独执行。  
+>   
+> 3、缺点：开发成本高，用例之间存在重复的操作。比如重复的用户登录和退出。  
+>   
+> 维护成本高，由于重复的操作，当重复的操作发生改变时，则需要逐一进行脚本的修改。  
+>   
+> 4.线性测试实例：用户登录  
+>   
+> **（2）模块化驱动测试**  
+>   
+> 1、概念：  
+>   
+> 将重复的操作独立成功共模块，当用例执行过程中需要用到这一模块操作时则被调用。  
+>   
+> 操作+（重复操作，数据）混合在一起。例如，自动化测试的执行需要保持测试用例的独立性和完整性，所以每一条用例在执行时都需要登录和退出操作，so可以把登录和退出的操作封装为公共函数。  
+>   
+> 2、优点：由于最大限度消除了重复，从而提高了开发效率和提高测试用例的可维护性。  
+>   
+> 3、缺点：虽然模块化的步骤相同，但是测试数据不同。比如说重复的登录模块，如果登录用户不同，依旧要重复编写登录脚本。  
+>   
+> 4.实例：对公共模块，例如登陆和退出进行模块化封装  
+>   
+> **（3）数据驱动测试**  
+>   
+> 1、概念：它将测试中的测试数据和操作分离，数据存放在另外一个文件中单独维护。  
+>   
+> 通过数据的改变从而驱动自动化测试的执行，最终引起测试结果的改变。  
+>   
+> 操作+重复操作+数据分开。  
+>   
+> 2、优点：  
+>   
+> 通过这种方式，将数据和重复操作分开，可以快速增加相似测试，完成不同数据情况下的测试。  
+>   
 > 3、实例从excel表格读取用户名密码，登录邮箱。
 
 ---
@@ -73,9 +61,9 @@ unittest是Python自带的单元测试框，可以用来作自动化测试框架
 * 写好TestCase
 * 由TestLoader加载TestCase到TestSuite
 * 然后由TextTestRunner来运行TestSuite，运行的结果保存在TextTestResult中。
- 
+
   通过命令行或者unittest.main\(\)执行时，main会调用TextTestRunner中的run\(\)来执行，或者可以直接通过TextTestRunner来执行用例。
- 
+
   在Runner执行时，默认将执行结果输出到控制台，我们可以设置其输出到文件，在文件中查看结果。
 
 **unittest中最核心的部分是：TestFixture、TestCase、TestSuite、TestRunner。**
@@ -135,7 +123,7 @@ def
 add
 (a,b)
 :
-    
+
 return
  a+b
 
@@ -143,7 +131,7 @@ def
 minus
 (a,b)
 :
-    
+
 return
  a-b
 
@@ -151,7 +139,7 @@ def
 multi
 (a,b)
 :
-    
+
 return
  a*b
 
@@ -159,7 +147,7 @@ def
 divide
 (a,b)
 :
-    
+
 return
  a/b
 ```
@@ -190,7 +178,7 @@ self
 "do something before test : prepare environment"
 )
 
-    
+
 def
 tearDown
 (
@@ -200,8 +188,8 @@ self
         print(
 "do something after test : clean up "
 )
-    
-    
+
+
 # 测试方法均已test开头，否则是不被unittest识别的
 def
 test_add
@@ -212,7 +200,7 @@ self
         print(
 "add:"
 )
-        
+
 self
 .assertEqual(
 3
@@ -222,7 +210,7 @@ self
 2
 ))
 
-    
+
 def
 test_minus
 (
@@ -232,7 +220,7 @@ self
         print(
 "minus"
 )
-        
+
 self
 .assertEqual(
 3
@@ -242,7 +230,7 @@ self
 2
 ))
 
-    
+
 def
 test_multi
 (
@@ -252,7 +240,7 @@ self
         print(
 "multi"
 )
-        
+
 self
 .assertEqual(
 6
@@ -262,7 +250,7 @@ self
 3
 ))
 
-    
+
 def
 test_divide
 (
@@ -272,7 +260,7 @@ self
         print(
 "divide"
 )
-        
+
 self
 .assertEqual(
 2
@@ -289,7 +277,7 @@ _
  == 
 "__main__"
 :
-    
+
 # 在main()中加verbosity参数，可以控制输出的错误报告的详细程度
 # verbosity=*：默认是1；设为0，则不输出每一个用例的执行结果；2-输出详细的执行结果
 
@@ -429,7 +417,7 @@ self
     print(
 "minus"
 )
-    
+
 self
 .assertEqual(
 3
@@ -458,7 +446,7 @@ test_divide
 self
 )
 :
-    
+
 self
 .skipTest(
 'do not run  test_divide()'
@@ -466,7 +454,7 @@ self
     print(
 "divide"
 )
-    
+
 self
 .assertEqual(
 2
@@ -565,7 +553,7 @@ all_cases
 None
 )
     print(discover)
-    
+
 return
  discover
 
@@ -591,11 +579,11 @@ if
 "__main__"
 :
     suite = unittest.TestSuite()
-    
+
 # 生成.txt的测试报告（控制台的输出写入到文件中）
 
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(TestFunc))
-    
+
 with 
 open
 (
@@ -617,9 +605,10 @@ as
 
 * **生成HTML测试报告**
 * 先下载HTMLTestRunner.py（注意Python的版本），
- 
-  [http://tungwaiyip.info/softwa...](http://tungwaiyip.info/software/HTMLTestRunner.html)
+
+  [http://tungwaiyip.info/softwa...](http://tungwaiyip.info/software/HTMLTestRunner.html)  
   。然后放在Python的Lib目录下；
+
 * 在run\_main.py文件中加入：from HTMLTestRunner import HTMLTestRunner
 
 `HTMLTestRunner()`方法有三个参数：  
@@ -640,7 +629,7 @@ TestSuite
     # 生成
 HTML
 格式的具体测试报告
-    
+
 with
  open(
 'HtmlReport
@@ -677,7 +666,7 @@ def
 add
 (a,b)
 :
-    
+
 return
  a+b
 
@@ -685,7 +674,7 @@ def
 minus
 (a,b)
 :
-    
+
 return
  a-b
 
@@ -693,7 +682,7 @@ def
 multi
 (a,b)
 :
-    
+
 return
  a*b
 
@@ -701,7 +690,7 @@ def
 divide
 (a,b)
 :
-    
+
 return
  a/b
 ```
@@ -745,7 +734,7 @@ tearDownClass
 "this teardownclass() method only called once too"
 )
 
-    
+
 # 测试方法均已test开头，否则是不被unittest识别的
 def
 test_add
@@ -762,7 +751,7 @@ test_add
 ,
 2
 ))
-    
+
 def
 test_minus
 (self)
@@ -778,7 +767,7 @@ test_minus
 ,
 2
 ))
-    
+
 # 如果想临时跳过某个case：skip装饰器
     @unittest.skip("i don't want to run this case. ")
 def
@@ -796,7 +785,7 @@ test_multi
 ,
 3
 ))
-    
+
 def
 test_divide
 (self)
@@ -818,7 +807,7 @@ if
  __name__ == 
 "__main__"
 :
-    
+
 # 在main()中加verbosity参数，可以控制输出的错误报告的详细程度
 # verbosity=*：默认是1；设为0，则不输出每一个用例的执行结果；2-输出详细的执行结果
 
@@ -857,7 +846,7 @@ if
 "__main__"
 :
     suite = unittest.TestSuite()
-    
+
 # 定义list，按照list里的顺序执行测试用例
 
     tests = [TestFunc(
@@ -870,7 +859,7 @@ if
 "test_divide"
 )]
     suite.addTests(tests)
-    
+
 '''
     runner = unittest.TextTestRunner(verbosity=2)
     runner.run(suite)
@@ -904,6 +893,5 @@ as
         runner.run(suite)
 ```
 
-  
 
 
