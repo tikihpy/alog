@@ -113,3 +113,7 @@ _这一章还没有写_
 
 介绍方便扩展Selenium所需的所有信息
 
+
+
+转自：[https://www.seleniumhq.org/docs/cn/01\_introducing\_selenium.jsp](https://www.seleniumhq.org/docs/cn/01_introducing_selenium.jsp)
+
