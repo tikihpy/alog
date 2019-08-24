@@ -1,5 +1,9 @@
 # Selenium介绍
 
+
+
+http://mudu.ns.4l.hk/show/videolink/lj117rdl/origin
+
 ## 自动化或者不自动化？这是个问题！
 
 自动化是否总是有利的？什么时候人们决定自动化测试用例呢？
@@ -112,8 +116,6 @@ _这一章还没有写_
 [用户插件](https://www.seleniumhq.org/docs/cn/08_user_extensions.jsp#chapter08-cn-reference)
 
 介绍方便扩展Selenium所需的所有信息
-
-
 
 转自：[https://www.seleniumhq.org/docs/cn/01\_introducing\_selenium.jsp](https://www.seleniumhq.org/docs/cn/01_introducing_selenium.jsp)
 
