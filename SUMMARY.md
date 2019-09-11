@@ -13,4 +13,5 @@
   * [第一章：数据结构和算法](pythoncookbook/di-yi-zhang-ff1a-shu-ju-jie-gou-he-suan-fa.md)
 * [自动化测试前期讨论](zi-dong-hua-ce-shi-qian-qi-tao-lun.md)
 * [自动化测试初步规划](zi-dong-hua-ce-shi-chu-bu-gui-hua.md)
+* [自动化测试规划草稿](zi-dong-hua-ce-shi-gui-hua-cao-gao.md)
 
