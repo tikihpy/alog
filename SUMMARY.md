@@ -18,4 +18,5 @@
 * [基线版本总结](ji-xian-ban-ben-zong-jie.md)
 * [UI自动化分享](uizi-dong-hua-fen-xiang.md)
 * [自动化考虑点](zi-dong-hua-kao-lv-dian.md)
+* [竖屏](shu-ping.md)
 
